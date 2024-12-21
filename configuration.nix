@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -84,7 +85,7 @@
     description = "Val";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -104,38 +105,38 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-   environment.systemPackages = with pkgs; [
-  	vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  	wget
-	curl
-  gcc
-  git
-	python3Full
-  python312Packages.pip
-	(vscode-with-extensions.override {
-    vscodeExtensions = with vscode-extensions; [
-      ms-python.python
-      ms-vscode.cpptools
-      github.copilot
-      github.copilot-chat
-      esbenp.prettier-vscode
-      pkief.material-icon-theme
-      bbenoist.nix
-      shd101wyy.markdown-preview-enhanced
-    ];
-  })
-	neovim
-  neofetch
-  cairo
-  pango
-  ffmpeg
-  ninja
-  pkg-config
-  cmake
-  clang
+  environment.systemPackages = with pkgs; [
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    curl
+    gcc
+    git
+    python3Full
+    python312Packages.pip
+    (vscode-with-extensions.override {
+      vscodeExtensions = with vscode-extensions; [
+        ms-python.python
+        ms-vscode.cpptools
+        github.copilot
+        github.copilot-chat
+        esbenp.prettier-vscode
+        pkief.material-icon-theme
+        bbenoist.nix
+        shd101wyy.markdown-preview-enhanced
+      ];
+    })
+    neovim
+    neofetch
+    cairo
+    pango
+    ffmpeg
+    ninja
+    pkg-config
+    cmake
+    clang
   ];
 
-  
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
